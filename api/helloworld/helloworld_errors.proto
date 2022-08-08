@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package api.helloworld;
+
+import "third_party/errors/errors.proto";
+
+option go_package = "github.com/devil-dwj/wms-template/api/helloworld;helloworld";
+
+enum SayHelloErrorCode {
+    option (errors.default_status) = 400;
+
+    OK = 0;
+    NOT_FIND = 1;
+    NOT_NIL = 2 [(errors.status) = 500];
+}

@@ -22,6 +22,10 @@ func NewHelloWorldServer(opts ...service.Option) *HelloWorldServer {
 }
 
 func (s *HelloWorldServer) SayHello(ctx context.Context, req *helloworld.HelloRequest) (*helloworld.HelloReply, error) {
+	if req.GetName() == "" {
+		return nil, helloworld.ErrorNotNil("name cannot be nil")
+	}
+
 	return &helloworld.HelloReply{
 		Message: "hello " + req.GetName(),
 	}, nil
