@@ -12,6 +12,7 @@ import (
 	"github.com/devil-dwj/wms/log"
 	"github.com/devil-dwj/wms/middleware/logging"
 	"github.com/devil-dwj/wms/middleware/recovery"
+	"github.com/devil-dwj/wms/middleware/validate"
 	"github.com/devil-dwj/wms/runtime/http"
 )
 
@@ -34,6 +35,7 @@ func main() {
 		http.Middleware(
 			recovery.Recovery(),
 			logging.Logging,
+			validate.Validator(),
 		),
 	)
 

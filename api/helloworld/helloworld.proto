@@ -3,11 +3,12 @@ syntax = "proto3";
 package helloworld;
 
 import "google/api/annotations.proto";
+import "validate/validate.proto";
 
 option go_package = "github.com/devil-dwj/wms-template/api/helloworld;helloworld";
 
 message HelloRequest {
-    string name = 1;
+    string name = 1 [(validate.rules).string = {min_len: 1, max_len: 10}];
 }
   
 message HelloReply {

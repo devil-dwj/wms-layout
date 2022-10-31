@@ -16,4 +16,5 @@ gen_router:
 			--goc_out=paths=source_relative:. \
 			--go-router_out=paths=source_relative:. \
 			--go-errors_out=paths=source_relative:. \
+			--validate_out=paths=source_relative,lang=go:. \
 			$(API_PROTOS)
