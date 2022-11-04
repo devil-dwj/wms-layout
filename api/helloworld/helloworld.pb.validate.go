@@ -68,6 +68,17 @@ func (m *HelloRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
+	if m.GetAge() < 18 {
+		err := HelloRequestValidationError{
+			field:  "Age",
+			reason: "value must be greater than or equal to 18",
+		}
+		if !all {
+			return err
+		}
+		errors = append(errors, err)
+	}
+
 	if len(errors) > 0 {
 		return HelloRequestMultiError(errors)
 	}

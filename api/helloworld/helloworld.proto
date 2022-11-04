@@ -9,6 +9,7 @@ option go_package = "github.com/devil-dwj/wms-template/api/helloworld;helloworld
 
 message HelloRequest {
     string name = 1 [(validate.rules).string = {min_len: 1, max_len: 10}];
+    int32 age = 2 [(validate.rules).int32 = {gte: 18}];
 }
   
 message HelloReply {
