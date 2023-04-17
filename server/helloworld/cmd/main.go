@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/devil-dwj/wms-bee/log/zap"
-	apihelloworld "github.com/devil-dwj/wms-template/api/helloworld"
-	"github.com/devil-dwj/wms-template/conf"
-	servicehelloworld "github.com/devil-dwj/wms-template/service/helloworld"
+	apihelloworld "github.com/devil-dwj/wms-layout/api/helloworld"
+	"github.com/devil-dwj/wms-layout/server/helloworld/conf"
+	servicehelloworld "github.com/devil-dwj/wms-layout/server/helloworld/service/helloworld"
 	"github.com/devil-dwj/wms/app"
 	"github.com/devil-dwj/wms/config"
 	"github.com/devil-dwj/wms/log"
@@ -18,7 +18,7 @@ import (
 
 func main() {
 	c := config.New(
-		config.WithSource("config.json"),
+		config.WithSource("../conf/config.json"),
 	)
 	if err := c.Load(); err != nil {
 		panic(err)

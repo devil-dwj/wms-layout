@@ -3,8 +3,8 @@ package helloworld
 import (
 	"context"
 
-	"github.com/devil-dwj/wms-template/api/helloworld"
-	"github.com/devil-dwj/wms-template/service"
+	"github.com/devil-dwj/wms-layout/api/helloworld"
+	"github.com/devil-dwj/wms-layout/server/helloworld/service"
 )
 
 type HelloWorldServer struct {

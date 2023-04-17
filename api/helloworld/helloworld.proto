@@ -9,7 +9,11 @@ option go_package = "github.com/devil-dwj/wms-template/api/helloworld;helloworld
 
 message HelloRequest {
     string name = 1 [(validate.rules).string = {min_len: 1, max_len: 10}];
-    int32 age = 2 [(validate.rules).int32 = {gte: 18}];
+    string nick_name = 2 [(validate.rules).string = {
+        pattern:   "^[a-zA-Z0-9\u4e00-\u9fa5]{2,15}$",
+      }];
+    int32 age = 3 [(validate.rules).int32 = {gte: 18}];
+    string email = 4 [(validate.rules).string.email = true];
 }
   
 message HelloReply {
